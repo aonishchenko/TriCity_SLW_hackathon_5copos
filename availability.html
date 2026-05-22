@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Circle Availability</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="availability">
+    <header id="app-header"></header>
+    <main class="page-shell">
+      <section class="page-title">
+        <div>
+          <p class="eyebrow">Route Lead</p>
+          <h1>Publish available school-walk slots.</h1>
+        </div>
+        <p>Incoming requests for those slots can be accepted, rejected with a reason, and discussed in chat.</p>
+      </section>
+
+      <section class="two-column availability-layout">
+        <form class="panel form-stack" id="availability-form">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Availability</p>
+              <h2>Days and timeframe</h2>
+            </div>
+          </div>
+          <fieldset>
+            <legend>Days available</legend>
+            <div class="day-grid" id="availability-days"></div>
+          </fieldset>
+          <div class="input-pair">
+            <label>
+              From
+              <input id="availability-from" required type="time" />
+            </label>
+            <label>
+              Until
+              <input id="availability-until" required type="time" />
+            </label>
+          </div>
+          <button class="primary-button" type="submit">Save availability</button>
+          <p class="success-copy" id="availability-saved" aria-live="polite"></p>
+          <section class="soft-block">
+            <h3>Visible to nearby parents</h3>
+            <p>Your available slots appear to Requesting Parents at the same school when their radius includes you.</p>
+          </section>
+        </form>
+
+        <section class="panel request-inbox">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Lead inbox</p>
+              <h2>Requests sent to your slots</h2>
+            </div>
+            <span class="status-pill" id="incoming-count"></span>
+          </div>
+          <div class="request-list" id="incoming-requests"></div>
+          <section class="chat-panel" id="availability-chat"></section>
+        </section>
+      </section>
+    </main>
+    <script src="./demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

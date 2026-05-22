@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Circle Profile</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="profile">
+    <header id="app-header"></header>
+    <main class="page-shell">
+      <section class="page-title">
+        <div>
+          <p class="eyebrow">Profile</p>
+          <h1>Parent details shared inside the pilot.</h1>
+        </div>
+        <p>Home location anchors same-school Route Lead matches and stays editable for the demo.</p>
+      </section>
+
+      <section class="two-column">
+        <form class="panel form-stack" id="profile-form">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Parent profile</p>
+              <h2>Contact and school</h2>
+            </div>
+            <span class="status-pill">Required</span>
+          </div>
+          <label>
+            Parent name
+            <input id="profile-name" required />
+          </label>
+          <label>
+            Associated school
+            <select id="profile-school" required></select>
+          </label>
+          <label>
+            Home location
+            <input id="profile-location" required />
+          </label>
+          <label>
+            Contact number
+            <input id="profile-contact" required type="tel" />
+          </label>
+          <label>
+            Email
+            <input id="profile-email" required type="email" />
+          </label>
+          <button class="primary-button" type="submit">Save profile</button>
+          <p class="success-copy" id="profile-saved" aria-live="polite"></p>
+        </form>
+
+        <section class="panel summary-stack">
+          <div>
+            <p class="eyebrow">Pilot context</p>
+            <h2>Your network</h2>
+          </div>
+          <div class="fact-grid" id="profile-facts"></div>
+          <section class="soft-block">
+            <h3>Role names</h3>
+            <p><strong>Route Lead</strong> brings children to school. <strong>Requesting Parent</strong> books a Lead.</p>
+          </section>
+          <a class="primary-link" href="./search.html">Search Route Leads</a>
+        </section>
+      </section>
+    </main>
+    <script src="./demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

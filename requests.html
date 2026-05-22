@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Circle Requests</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="requests">
+    <header id="app-header"></header>
+    <main class="page-shell">
+      <section class="page-title">
+        <div>
+          <p class="eyebrow">Request history</p>
+          <h1>Active and recent walks.</h1>
+        </div>
+        <p>Demo history includes accepted, rejected, and pending requests from the last month.</p>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="history-tabs" role="tablist" aria-label="Request history filters">
+          <button class="tab-button active" type="button" data-history="all">All</button>
+          <button class="tab-button" type="button" data-history="pending">Pending</button>
+          <button class="tab-button" type="button" data-history="accepted">Accepted</button>
+          <button class="tab-button" type="button" data-history="rejected">Rejected</button>
+        </div>
+        <div class="request-table" id="request-history"></div>
+      </section>
+    </main>
+    <script src="./demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

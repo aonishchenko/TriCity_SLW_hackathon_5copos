@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Circle Sign Up</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="signup">
+    <main class="auth-shell">
+      <section class="auth-intro">
+        <a class="brand" href="./index.html" aria-label="School Circle sign up">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>
+            <strong>School Circle</strong>
+            <small>School-route parent pilot</small>
+          </span>
+        </a>
+        <p class="eyebrow">Demo network</p>
+        <h1>Parents can request a walk or be the Route Lead.</h1>
+        <p>
+          This prototype starts with invited schools, location-aware parent matches, request history, approvals, and chat.
+        </p>
+        <div class="metric-row">
+          <div><strong>3</strong><span>schools</span></div>
+          <div><strong>90</strong><span>demo parents</span></div>
+          <div><strong>1 km</strong><span>nearby cluster</span></div>
+        </div>
+      </section>
+
+      <section class="auth-grid">
+        <form class="panel form-stack" id="signup-form">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Sign up</p>
+              <h2>Create parent profile</h2>
+            </div>
+          </div>
+          <label>
+            Parent name
+            <input id="signup-name" required value="Marta Almeida" />
+          </label>
+          <label>
+            Associated school
+            <select id="signup-school" required></select>
+          </label>
+          <label>
+            Home location
+            <input id="signup-location" required value="Rua do Pilot 18, Alcantara" />
+          </label>
+          <label>
+            Contact number
+            <input id="signup-contact" required type="tel" value="+351 912 000 418" />
+          </label>
+          <label>
+            Email
+            <input id="signup-email" required type="email" value="marta.demo@schoolcircle.test" />
+          </label>
+          <label>
+            Password
+            <input id="signup-password" required type="password" value="pilotpass" minlength="6" />
+          </label>
+          <button class="primary-button" type="submit">Create profile</button>
+        </form>
+
+        <section class="panel auth-side">
+          <form class="form-stack compact-form" id="login-form">
+            <div>
+              <p class="eyebrow">Demo login</p>
+              <h2>Use an existing parent</h2>
+            </div>
+            <label>
+              Email
+              <input id="login-email" required type="email" placeholder="parent@schoolcircle.test" />
+            </label>
+            <label>
+              Password
+              <input id="login-password" required type="password" placeholder="demo123" />
+            </label>
+            <p class="form-error" id="login-error" role="alert"></p>
+            <button class="secondary-button" type="submit">Log in</button>
+          </form>
+
+          <section class="credential-card">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Quick access</p>
+                <h3>Demo credentials</h3>
+              </div>
+            </div>
+            <div class="credential-list" id="credential-list"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="./demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
