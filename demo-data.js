@@ -42,6 +42,7 @@
         lat: school.lat + offset[0],
         lng: school.lng + offset[1],
         cluster: index < 10 ? "nearby" : "wider-area",
+        completedRoutes: 6 + ((index * 7 + schoolIndex * 11) % 38),
         availability: {
           days: daysByIndex[index % daysByIndex.length],
           from: timeWindows[index % timeWindows.length][0],

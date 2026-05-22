@@ -519,6 +519,7 @@
                   <div><dt>School</dt><dd>${escapeHtml(schoolById(lead.schoolId).name)}</dd></div>
                   <div><dt>Lead days</dt><dd>${lead.availability.days.map((day) => dayLabels[day]).join(", ")}</dd></div>
                   <div><dt>Timeframe</dt><dd>${lead.availability.from}-${lead.availability.until}</dd></div>
+                  <div><dt>Completed routes</dt><dd>${lead.completedRoutes}</dd></div>
                 </dl>
                 <button class="secondary-button" type="button" data-select-lead="${lead.id}">${selectedLeadId === lead.id ? "Selected" : "Select Lead"}</button>
               </article>
