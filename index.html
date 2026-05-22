@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Circle Pilot</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="School Circle pilot home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>
+            <strong>School Circle</strong>
+            <small>Pilot network for school parents</small>
+          </span>
+        </a>
+
+        <div class="role-legend" aria-label="Parent roles">
+          <span><strong>Route Lead</strong> walks children to school</span>
+          <span><strong>Requesting Parent</strong> books a walk</span>
+        </div>
+      </header>
+
+      <section class="pilot-strip" aria-label="Pilot scope">
+        <div>
+          <p class="eyebrow">School pilot</p>
+          <h1>Match nearby parents heading to the same school.</h1>
+        </div>
+        <dl>
+          <div>
+            <dt>Network</dt>
+            <dd>Parents from invited schools</dd>
+          </div>
+          <div>
+            <dt>Default radius</dt>
+            <dd>1 km from starting point</dd>
+          </div>
+          <div>
+            <dt>Booking window</dt>
+            <dd>Today to 7 days ahead</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="dashboard">
+        <aside class="panel profile-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Parent profile</p>
+              <h2>Home and availability</h2>
+            </div>
+            <span class="status-pill" id="profile-status">Home required</span>
+          </div>
+
+          <form id="profile-form">
+            <label>
+              Parent name
+              <input id="parent-name" value="Marta Almeida" />
+            </label>
+
+            <label>
+              Home location
+              <input id="home-location" required value="Rua da Escola 18, Alcantara" />
+            </label>
+
+            <label>
+              Primary school
+              <select id="profile-school">
+                <option value="riverside">Riverside Primary</option>
+                <option value="jardim">Jardim Central School</option>
+                <option value="tagus">Tagus Learning House</option>
+                <option value="clube">Clube Norte Sports School</option>
+              </select>
+            </label>
+
+            <fieldset>
+              <legend>I can be a Route Lead on</legend>
+              <div class="day-grid" id="availability-days">
+                <label><input type="checkbox" value="1" checked /> Mon</label>
+                <label><input type="checkbox" value="2" checked /> Tue</label>
+                <label><input type="checkbox" value="3" /> Wed</label>
+                <label><input type="checkbox" value="4" checked /> Thu</label>
+                <label><input type="checkbox" value="5" checked /> Fri</label>
+                <label><input type="checkbox" value="6" /> Sat</label>
+                <label><input type="checkbox" value="0" /> Sun</label>
+              </div>
+            </fieldset>
+
+            <button class="secondary-button" type="submit">Save profile</button>
+          </form>
+
+          <section class="note-block">
+            <h3>Two roles, one parent</h3>
+            <p>
+              A parent can request a walk for their child and also publish the days they can lead other children to
+              school.
+            </p>
+          </section>
+        </aside>
+
+        <section class="panel request-panel">
+          <div class="section-head request-head">
+            <div>
+              <p class="eyebrow">Requesting Parent</p>
+              <h2>Plan a school walk</h2>
+            </div>
+            <p class="muted">Only Route Leads for the same destination and nearby start area appear.</p>
+          </div>
+
+          <form class="request-grid" id="walk-request-form">
+            <label>
+              Destination school
+              <select id="request-school">
+                <option value="riverside">Riverside Primary</option>
+                <option value="jardim">Jardim Central School</option>
+                <option value="tagus">Tagus Learning House</option>
+                <option value="clube">Clube Norte Sports School</option>
+              </select>
+            </label>
+
+            <label>
+              Starting point
+              <input id="starting-point" required value="Home: Rua da Escola 18, Alcantara" />
+            </label>
+
+            <label>
+              Trip date
+              <input id="trip-date" type="date" required />
+            </label>
+
+            <div class="time-window" role="group" aria-label="Departure time window">
+              <label>
+                From
+                <input id="time-from" type="time" value="07:50" required />
+              </label>
+              <label>
+                Until
+                <input id="time-until" type="time" value="08:20" required />
+              </label>
+            </div>
+
+            <label class="radius-field">
+              Search radius
+              <span>
+                <input id="radius" type="range" min="0.5" max="3" value="1" step="0.25" />
+                <output id="radius-output" for="radius">1 km</output>
+              </span>
+            </label>
+
+            <button class="primary-button" type="submit">Find Route Leads</button>
+          </form>
+
+          <section class="match-summary" aria-live="polite">
+            <div>
+              <p class="eyebrow">Filtered matches</p>
+              <h3 id="match-title">Route Leads near your start</h3>
+              <p id="match-copy"></p>
+            </div>
+            <div class="selected-lead" id="selected-lead">
+              <span>Selected Route Lead</span>
+              <strong>None yet</strong>
+            </div>
+          </section>
+
+          <div class="lead-list" id="lead-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
